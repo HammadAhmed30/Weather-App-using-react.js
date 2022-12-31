@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function App() {
   const [inputName, setName] = useState("");
@@ -8,6 +8,11 @@ export default function App() {
   const [weather, setWeather] = useState("");
   const [humidity, setHumidity] = useState("");
   const [countryName, setCountryName] = useState("");
+  const [HeightIni, setHeight] = useState(window.outerHeight);
+  useEffect(() => {
+    setHeight(window.outerHeight);
+  }, []);
+  console.log(window.outerHeight);
 
   const handleFetchMethod = async (e) => {
     try {
@@ -53,6 +58,7 @@ export default function App() {
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
+          overflow: hidden;
         }
         .width-container {
           width: min(100% - 30px, 1100px);

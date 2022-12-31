@@ -3,14 +3,20 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import reportWebVitals from "./reportWebVitals";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // return(
   <React.StrictMode>
     <div
+      className="main-cnt"
       style={{
+        // display: "table",
+        // position: "absolute",
         width: "100vw",
-        height: "100vh",
+        height: window.innerHeight,
+        // height: "100vh",
+        overflow: "hidden",
       }}
     >
       <App />
